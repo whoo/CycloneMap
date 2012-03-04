@@ -11,3 +11,6 @@ exportkml.php 	> Generation du fichier kml > pour la map ou pour GoogleEarth
 ##### Version 2
 Configuration dans un fichier de configuration
 Gestion du cache pour le fichier kml
+
+##### Version 3
+Optimisation
