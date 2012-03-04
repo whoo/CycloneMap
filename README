@@ -1,5 +1,10 @@
 Cyclone Map from ram
-
+http://rammb.cira.colostate.edu/products/tc_realtime
+Visualisation sur une map google.
 
 ##### Version 1 
 Importation des éléments.
+index.php 	> Page d'indexe avec la map google
+meta.php  	> Recuperation des informations 
+exportkml.php 	> Generation du fichier kml > pour la map ou pour GoogleEarth
+
