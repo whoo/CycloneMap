@@ -1,22 +1,7 @@
 <?
-
-function save($buffer)
-{
-chdir(dirname($_SERVER['SCRIPT_FILENAME']));
-$tb=parse_ini_file('config.php',true);
-$file=(isset($tb['FILE']['kmlfile']))?$tb['FILE']['kmlfile']:"export.kml";
-file_put_contents($file,$buffer);
-return $buffer;
-}
-
 header('Content-type: application/vnd.google-earth.kml+xml');
-$tb=parse_ini_file('config.php',true);
-$CACHEFILE=(isset($tb['FILE']['cachefile']))?$tb['FILE']['cachefile']:0;
-if (!is_file($CACHEFILE)) exit();
-$Xml=simplexml_load_file($CACHEFILE);
+$Xml=simplexml_load_file('./full-cache.xml');
 header("Content-Disposition: attachment; filename=\"cyclone.kml\"");
-ob_start(save);
-
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 ?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
