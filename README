@@ -8,3 +8,6 @@ index.php 	> Page d'indexe avec la map google
 meta.php  	> Recuperation des informations 
 exportkml.php 	> Generation du fichier kml > pour la map ou pour GoogleEarth
 
+##### Version 2
+Configuration dans un fichier de configuration
+Gestion du cache pour le fichier kml

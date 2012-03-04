@@ -1,6 +1,10 @@
 <?
 header ("content-type: text/xml");
 
+chdir(dirname($_SERVER['SCRIPT_FILENAME']));
+$tb=parse_ini_file('config.php',true);
+$CACHEFILE=(isset($tb['FILE']['cachefile']))?$tb['FILE']['cachefile']:0;
+
 function getURL($BASE,$debug=0)
 {
 	if (!$debug) {
@@ -136,7 +140,7 @@ $Out.="</all>";
 $Out=preg_replace("/<\?xml version=\"1.0\"\?>/","",$Out);
 
 $XML=simplexml_load_string($Out);
-$XML->asXml('./full-cache.xml');
-readfile('./full-cache.xml');
+$XML->asXml($CACHEFILE);
+readfile($CACHEFILE);
 
 ?>
